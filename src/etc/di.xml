@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Connect Integration Suite - Registry
+ *
+ * A replacement for deprecated core registry functionality for category, customer, product, sales objects.
+ *
+ * @author Peter McWilliams <pmcwilliams@augustash.com>
+ * @license MIT
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Augustash\ConnectRegistry\Api\CategoryRegistryInterface" type="Augustash\ConnectRegistry\Registry\CurrentCategory"/>
+    <preference for="Augustash\ConnectRegistry\Api\CustomerRegistryInterface" type="Augustash\ConnectRegistry\Registry\CurrentCustomer"/>
+    <preference for="Augustash\ConnectRegistry\Api\OrderRegistryInterface" type="Augustash\ConnectRegistry\Registry\CurrentOrder"/>
+    <preference for="Augustash\ConnectRegistry\Api\ProductRegistryInterface" type="Augustash\ConnectRegistry\Registry\CurrentProduct"/>
+</config>

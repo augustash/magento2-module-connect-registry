@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Connect Integration Suite - Registry
+ *
+ * A replacement for deprecated core registry functionality for category, customer, product, sales objects.
+ *
+ * @author Peter McWilliams <pmcwilliams@augustash.com>
+ * @license MIT
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
+    <module name="Augustash_ConnectRegistry">
+        <sequence>
+            <module name="Magento_Catalog"/>
+            <module name="Magento_Customer"/>
+            <module name="Magento_Sales"/>
+        </sequence>
+    </module>
+</config>

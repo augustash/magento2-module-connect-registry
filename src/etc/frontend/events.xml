@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Connect Integration Suite - Registry
+ *
+ * A replacement for deprecated core registry functionality for category, customer, product, sales objects.
+ *
+ * @author Peter McWilliams <pmcwilliams@augustash.com>
+ * @license MIT
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="catalog_controller_category_init_after">
+        <observer name="augustash_connect_register_current_category" instance="Augustash\ConnectRegistry\Observer\RegisterCurrentCategoryObserver"/>
+    </event>
+
+    <event name="catalog_controller_product_init_after">
+        <observer name="augustash_connect_register_current_product" instance="Augustash\ConnectRegistry\Observer\RegisterCurrentProductObserver"/>
+    </event>
+
+    <event name="customer_data_object_login">
+        <observer name="augustash_connect_register_current_customer" instance="Augustash\ConnectRegistry\Observer\RegisterCurrentCustomerObserver"/>
+    </event>
+</config>

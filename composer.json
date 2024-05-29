@@ -1,0 +1,60 @@
+{
+    "name": "augustash/module-connect-registry",
+    "description": "Magento 2 Connect Integration Suite Registry",
+    "license": [
+        "MIT"
+    ],
+    "type": "magento2-module",
+    "homepage": "https://github.com/augustash/magento2-module-connect-registry",
+    "require": {
+        "php": ">= 8.1",
+        "magento/framework": ">= 103.0.5",
+        "magento/module-customer": "@stable",
+        "magento/module-catalog": "@stable",
+        "magento/module-sales": "@stable"
+    },
+    "require-dev": {
+        "augustash/magento2-quality-suite": "^1.0"
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://repo.magento.com/"
+        },
+        {
+            "type": "composer",
+            "url": "https://repo.packagist.com/augustash/magento/"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Augustash\\ConnectRegistry\\": "src"
+        },
+        "files": [
+            "src/registration.php"
+        ]
+    },
+    "config": {
+        "allow-plugins": {
+            "magento/composer-dependency-version-audit-plugin": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        },
+        "sort-packages": true
+    },
+    "scripts": {
+        "test:all": [
+            "@test:lint",
+            "@test:mess",
+            "@test:stan",
+            "@test:style"
+        ],
+        "test:lint": "vendor/bin/parallel-lint --exclude vendor src/",
+        "test:mess": "vendor/bin/phpmd src/ text phpmd.xml.dist",
+        "test:stan": "vendor/bin/phpstan analyze --no-interaction --no-progress src/",
+        "test:static-analysis": [
+            "@test:lint",
+            "@test:stan"
+        ],
+        "test:style": "vendor/bin/phpcs -s src/"
+    }
+}
