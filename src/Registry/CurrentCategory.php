@@ -16,7 +16,7 @@ namespace Augustash\ConnectRegistry\Registry;
 use Augustash\ConnectRegistry\Api\CategoryRegistryInterface;
 use Magento\Catalog\Api\Data\CategoryInterface;
 
-class CategoryRegistry implements CategoryRegistryInterface
+class CurrentCategory implements CategoryRegistryInterface
 {
     /**
      * Current category object.
